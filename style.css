@@ -27,10 +27,10 @@ body::-webkit-scrollbar{
 .inner-cursor{
     position: fixed;
     left: 10px;
-    width: 8px;
-    height: 8px;
+    /* width: 8px;
+    height: 8px; */
     transform: translate(-50%,-50%);
-    background-color: #EDDDD4;
+    /* background-color: #ffffff; */
     mix-blend-mode: difference;
     border-radius: 50%;
     pointer-events: none;
@@ -43,7 +43,7 @@ body::-webkit-scrollbar{
     width: 60px;
     height: 60px;
     transform: translate(-50%,-50%);
-    border: 2px solid #EDDDD4;
+    border: 2px solid #ffffff;
     mix-blend-mode: difference;
     border-radius: 50%;
     pointer-events: none;
@@ -164,7 +164,7 @@ color:#283D3B;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -284,11 +284,13 @@ color:#283D3B;
 /* landing section end */
 
 section{
+    
     width: 100%;
-    height: 100vh;
-    margin-top: 5rem;
+    height: 120vh;
+    margin: 5rem 0 0 0;
 }
 .section-title{
+    padding: 3rem;
     margin: 0 0 5rem 6rem;
     font-size: 1.5rem;
 }
