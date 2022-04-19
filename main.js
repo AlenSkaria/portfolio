@@ -2,6 +2,12 @@
 let innerCursor = document.querySelector('.inner-cursor');
 let outerCursor = document.querySelector('.outer-cursor');
 
+// spash sreen init
+let intro = document.querySelector('.intro');
+let logoSplash = document.querySelector('.logo-splash');
+let logoContent = document.querySelectorAll('.logo-content');
+
+
 // scroll progress init
 let progressSection = document.querySelector('.progress-section');
 let progressBar = document.querySelector('.progress-bar');
@@ -21,6 +27,31 @@ function moveCursor(e){
     outerCursor.style.top = `${y}px`;
 }   
 
+// splash screen code
+document.addEventListener('DOMContentLoaded', ()=>{
+    setTimeout(()=>{
+        logoContent.forEach((span, idx)=>{
+            setTimeout(()=>{
+                span.classList.add('active');
+            }, (idx + 1 )* 400)
+        });
+
+        setTimeout(()=>{
+            logoContent.forEach((span, idx)=>{
+
+                setTimeout(()=>{
+                    span.classList.remove('active');
+                    span.classList.add('fade');
+                })
+            })
+        }, 2000);
+
+
+        setTimeout(()=>{
+            intro.style.opacity='0';
+        },2700)
+    })
+})
 
 
 // scroll progress code
