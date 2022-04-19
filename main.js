@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
         setTimeout(()=>{
-            intro.style.opacity='0';
-        },2700)
+            intro.style.top='-100vh';
+        },2100)
     })
 })
 
