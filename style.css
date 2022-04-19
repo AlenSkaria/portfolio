@@ -3,15 +3,8 @@
 
 :root {
         /*========== Colors ==========*/
-    --hue: 14;
-    --first-color: hsl(var(--hue), 91%, 54%);
-    --first-color-alt: hsl(var(--hue), 91%, 50%);
-    --title-color: hsl(var(--hue), 4%, 100%);
-    --text-color: hsl(var(--hue), 4%, 85%);
-    --text-color-light: hsl(var(--hue), 4%, 55%);
-  
     /*Green gradient*/
-    --body-color: linear-gradient(100deg, #0a0924 0%, #000000 30%, #0a0924 84%);
+    --body-color: linear-gradient(100deg, #0a0924 0%, #000000 52%, #0a0924 88%);
     /* --body-color: linear-gradient(90deg,#003159 , #01101f 100%); */
     --text-color: rgb(255, 255, 255);
     --open-color: #111;
@@ -277,9 +270,23 @@ color:#283D3B;
     align-items: center;
 }
 .icon-base:hover{
-    background-color: #edddd473;
-    color: #283D3B;
+    background-color: #ffffffe3;
+    color: #0f1818;
 }
+
+.resume{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 1rem 1.8rem;
+    border: 1px solid #fff;
+    margin-top: 2.5rem;
+    border-radius: 6px;
+}
+.resume:hover{
+   color: #111;
+   background-color: rgba(255, 255, 255, 0.767);
+}
+
 
 .scroll-down{
     position: absolute;
@@ -394,7 +401,7 @@ section{
     letter-spacing: 1px;
 }
 .about-me .about-content p{
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     letter-spacing: .6px;
     font-weight: 350;
     font-size: 1.1rem;
