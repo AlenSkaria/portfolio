@@ -873,12 +873,15 @@ section{
     }
     
     /* about section  start*/
-    
+    .about-me{
+        flex-direction: column;
+        text-align: center;
+    }
     .about-me>.img{
-        padding: .4rem;
+        padding: .4rem .4rem 1.4rem .4rem;
     }
     .about-me img{
-        width: 9rem; 
+        width: 13rem; 
     }
     .about-me .about-content{
         width: 200px; 
