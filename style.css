@@ -703,7 +703,9 @@ section{
 @media screen and (max-width: 425px){
 
     /* splash screen */
-    
+    .intro{
+        z-index: 100;
+    }
     .logo-content{
         font-size: 1.5rem;
         font-weight: 400;
@@ -758,10 +760,10 @@ section{
     .nav-bar{
         position: fixed;
         left: 0;
-        background:var(--body-color);
+        background:#111;
         width: 100%;
         height: 4rem;
-        z-index: 100;
+        z-index: 20;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -784,7 +786,7 @@ section{
     }
 
     nav.active-menu{
-        z-index: 1000;
+        z-index: 98;
         top: 0%;
         transition: 1s;
     }
