@@ -13,6 +13,31 @@ let progressSection = document.querySelector('.progress-section');
 let progressBar = document.querySelector('.progress-bar');
 let progressNum = document.querySelector('.progress-num');
 
+//menu toggle and menu bar old
+// let menuIcon = document.querySelector('.menu-icon');
+// let menuClose = document.querySelector('.menu-close');
+// let menu = document.querySelector('.menu');
+// let navLinks = document.querySelectorAll('.nav-link');
+
+//menu toggle and menu bar new init
+const navMenu = document.getElementById('nav-menu');
+const toggleMenu = document.getElementById('nav-toggle');
+const closeMenu = document.querySelector('.menu-close');
+const navLink = document.querySelectorAll('.nav-link');
+ 
+toggleMenu.addEventListener('click', ()=>{
+    navMenu.classList.add('active-menu');
+   })
+closeMenu.addEventListener('click', ()=>{
+    navMenu.classList.remove('active-menu');
+   })
+
+function linkAction(){
+    navMenu.classList.remove('active-menu');
+}
+
+navLink.forEach(n=> n.addEventListener('click', linkAction))
+
 
 
 
@@ -70,3 +95,23 @@ function getScrollPercentage(){
 
 
 updateProgressBar()
+
+
+
+
+
+
+//menu toggle and menu bar code  
+
+toggleMenu.addEventListener('click', ()=>{
+    navMenu.classList.add('active-menu');
+   })
+closeMenu.addEventListener('click', ()=>{
+    navMenu.classList.remove('active-menu');
+   })
+
+function linkAction(){
+    navMenu.classList.remove('active-menu');
+}
+
+navLink.forEach(n=> n.addEventListener('click', linkAction))

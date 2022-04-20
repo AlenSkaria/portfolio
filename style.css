@@ -4,17 +4,12 @@
 :root {
         /*========== Colors ==========*/
     /*Green gradient*/
-    --body-color: linear-gradient(100deg, #0a0924 0%, #000000 52%, #0a0924 88%);
+    --body-color: linear-gradient(102deg, #0a0924 2%, #000000 50%, #0a0924 80%);
     /* --body-color: linear-gradient(90deg,#003159 , #01101f 100%); */
     --text-color: rgb(255, 255, 255);
     --open-color: #111;
-
-
- 
   }
   
-
-
 *{
    
     padding: 0;
@@ -39,6 +34,7 @@ body::-webkit-scrollbar{
 
 /* Cursor section start  */
 .inner-cursor{
+    z-index: 10;
     position: fixed;
     left: 10px;
     /* width: 8px;
@@ -52,6 +48,7 @@ body::-webkit-scrollbar{
 }
 
 .outer-cursor{
+    z-index: 10;
     position: fixed;
     left: 10px;
     width: 4rem;
@@ -215,6 +212,57 @@ color:#283D3B;
     -webkit-text-fill-color: transparent;
 }
 
+
+/* menu */
+nav{
+    z-index: 4;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: -100vh;
+    background-color: #000000;
+    transition: .5s;
+}
+
+nav.active-menu{
+    top: 0%;
+    transition: 1s;
+}
+
+nav ul{
+position: absolute;
+left: 12%;
+top: 20%;
+list-style: none;
+height: 55%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.nav-link{
+    position: relative;
+    color: var(--text-color);
+    left: 0;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.nav-link:hover{
+    left: 15%;
+    transition: .5s;
+}
+.menu-close{
+    position: absolute;
+    font-size: 1.5rem;
+    top:3rem;
+    right: 5rem;
+    cursor: pointer;
+}
+
 /* navigation section end */
 
 /* landing section start */
@@ -364,7 +412,7 @@ section{
     
     width: 100%;
     height: 120vh;
-    margin: 5rem 0 0 0;
+    margin: 0 0 0 0;
 }
 .section-title{
     padding: 3rem;

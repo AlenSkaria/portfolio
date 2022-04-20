@@ -19,22 +19,31 @@
 
 
     <header class="container">
-        <nav>
+        
             <div class="nav-bar">
                 <div class="logo">Alen</div>
-                <div class="menu-icon"><i class="fa-solid fa-bars-staggered"></i></div>
+                <div class="menu-icon" id="nav-toggle"><i class="fa-solid fa-bars-staggered"></i></div>
             </div>
-        </nav>
+
+            <nav class="menu" id="nav-menu">
+                <div class="menu-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <ul>
+                    <li><a class="nav-link" href="#Home">Home.</a></li>
+                    <li><a class="nav-link" href="#About">About.</a></li>
+                    <li><a class="nav-link" href="#Works">Works.</a></li>
+                    <li><a class="nav-link" href="#Skillset">Skills.</a></li>
+                    <li><a class="nav-link" href="#Contact">Contact.</a></li>
+                </ul>
+            </nav>
+       
     </header>
-
-
-
 
 <div class="socialmedia fixed">
    <a target="_blank" href="https://www.instagram.com/alen.skaria/?hl=en"><div class="instagram icon"><i class="fa-brands fa-instagram"></i></div></a> 
    <a target="_blank" href="https://www.linkedin.com/in/skaria-andrews/"><div class="linkedin icon"><i class="fa-brands fa-linkedin"></i></div></a> 
    <a target="_blank" href="https://www.behance.net/skaria-andrews"><div class="behance icon"><i class="fa-brands fa-behance-square"></i></div></a>
-    
 </div>
 
 <div class="inner-cursor"><i class="fa-solid fa-angle-up"></i></div>
@@ -49,8 +58,9 @@
 </div>
 
 
-    <main class="container ">
-        <div class="landing-section">
+    <main class="container">
+        <section id="Home">        
+            <div  class="landing-section">
             <h1 class="title">SKARIA ANDREWS</h1>
             <p class="sub-title">Front-End Developer | UX/UI Designer  | Content-Creator</p>
             <div class="title-icon">
@@ -75,9 +85,10 @@
               
             </a>
             
-        </div>
+            </div>
 
        
+        </section>
 
 
         <section id="About">
@@ -105,9 +116,18 @@
                 <h3>// Works.</h3>
             </div>
         </section>
-        <section id="Works">
+
+        
+        <section id="Skillset">
             <div class="section-title">
                 <h3>// Skill-set.</h3>
+            </div>
+        </section>
+        
+
+        <section id="Contact">
+            <div class="section-title">
+                <h3>// Contact.</h3>
             </div>
         </section>
         
