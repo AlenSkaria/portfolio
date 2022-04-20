@@ -717,6 +717,7 @@ section{
         
     
     .socialmedia{
+        display: none;
         bottom: 2rem;
         right: 2rem;
     }
@@ -734,6 +735,7 @@ section{
     
     /* Progress animation section start */
     .progress-section{
+        display: none;
         bottom: 2rem;
         left: 2rem;
         width: 30px;
@@ -753,18 +755,40 @@ section{
     
     /* navigation section start */
     
+    .nav-bar{
+        position: fixed;
+        left: 0;
+        background:var(--body-color);
+        width: 100%;
+        height: 4rem;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        
+    }
     
     .logo{
+        position: static;
         font-size: .8rem;
         font-weight: 400;
         top:3rem;
         left: 2rem;
     }
     .menu-icon{
+        position: static;
         font-size: .8rem;
         top:3rem;
         right: 2rem;
     }
+
+    nav.active-menu{
+        z-index: 1000;
+        top: 0%;
+        transition: 1s;
+    }
+
     /* menu */
     nav ul{
     left: 12%;
@@ -780,7 +804,7 @@ section{
         position: absolute;
         font-size: 1rem;
         top:3rem;
-        right: 3rem;
+        right: 2rem;
     }
     
     /* navigation section end */
