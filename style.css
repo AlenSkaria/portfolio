@@ -702,6 +702,20 @@ section{
 
 @media screen and (max-width: 425px){
 
+
+    
+/* Cursor section start  */
+.inner-cursor{
+   display: none;
+}
+
+.outer-cursor{
+  display: none;
+}
+
+/* Cursor section end  */
+
+
     /* splash screen */
     .intro{
         z-index: 100;
@@ -714,7 +728,7 @@ section{
     
     
     .container{
-        margin: 0 4rem 0 4rem;
+        margin: 0 3.3rem 0 3.3rem;
     }
         
     
@@ -760,7 +774,7 @@ section{
     .nav-bar{
         position: fixed;
         left: 0;
-        background:#111;
+        background:transparent;
         width: 100%;
         height: 4rem;
         z-index: 20;
@@ -893,41 +907,41 @@ section{
         margin: 0 0 0 0;
     }
     .section-title{
-        padding: 3rem;
-        margin: 0 0 1rem 0rem;
-        font-size: 1.2rem;
+        padding: 2rem;
+        margin: 0 0 .7rem 0rem;
+        font-size: 1.1rem;
     }
     
     /* about section  start*/
     .about-me{
         flex-direction: column;
-        text-align: center;
+        
     }
     .about-me>.img{
-        padding: .4rem .4rem 1.4rem .4rem;
+        padding: .4rem .4rem 1.5rem .4rem;
     }
     .about-me img{
-        width: 13rem; 
+        width: 14rem; 
     }
     .about-me .about-content{
-        width: 200px; 
+        width: auto; 
         margin-left: .8rem;
         line-height: 1.4;
     }
     .about-me .about-content h2{
         margin-bottom: .6rem;
-        font-size: .9rem;
+        font-size: 1.3rem;
         letter-spacing: .6px;
     }
     .about-me .about-content p{
         margin-bottom: .7rem;
         letter-spacing: .6px;
         font-weight: 350;
-        font-size: .5rem;
+        font-size: .8rem;
     }
     
     .about-me .about-content span{
-        font-size: .6rem;
+        font-size: .9rem;
         font-weight: 500;
     }
 
