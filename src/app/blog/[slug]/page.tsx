@@ -1,4 +1,3 @@
-// src/app/blog/[slug]/page.tsx
 import { readFileSync } from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -11,7 +10,6 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "src/app/blog/posts");
   const filenames = ["vibe-coding", "mentorship-advantages"]; // OR read from fs
   return filenames.map((slug) => ({ slug }));
 }
