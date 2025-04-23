@@ -11,16 +11,17 @@ interface PageProps {
 // Generate static params correctly (no need for async/await here)
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "src/app/blog/posts");
-  
+
   // Ensure fs is correctly imported
-  const filenames = readdirSync(postsDirectory).map((file) => file.replace(/\.mdx$/, ""));
+  const filenames = readdirSync(postsDirectory).map((file) =>
+    file.replace(/\.mdx$/, "")
+  );
   return filenames.map((slug) => ({ slug }));
 }
 
 // Dynamic Blog Post Page (make sure it handles params correctly)
 export default async function BlogPostPage({ params }: PageProps) {
-  // Ensure params is passed correctly and slug is accessed
-  const slug = params.slug;
+  const slug = (await params).slug; // Await the params
 
   const filePath = path.join(
     process.cwd(),
@@ -45,7 +46,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       <article>
         <h1>{data.title}</h1>
         <p className="text-sm text-gray-500">{data.date}</p>
-        {compiled}  {/* Render compiled MDX content */}
+        {compiled} {/* Render compiled MDX content */}
       </article>
     </MdxLayout>
   );
