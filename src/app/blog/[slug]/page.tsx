@@ -1,39 +1,45 @@
-import fs from "fs";
+// src/app/blog/[slug]/page.tsx
+import { readFileSync } from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { compileMDX } from "next-mdx-remote/rsc"; // If using RSC
+import { compileMDX } from "next-mdx-remote/rsc";
+
 import MdxLayout from "@/components/mdx-layout";
 
-export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), "src/app/blog/posts"));
-  return files.map((filename) => ({
-    slug: filename.replace(".mdx", ""),
-  }));
+interface PageProps {
+  params: { slug: string };
 }
 
-export default async function BlogPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), "src/app/blog/posts");
+  const filenames = ["vibe-coding", "mentorship-advantages"]; // OR read from fs
+  return filenames.map((slug) => ({ slug }));
+}
+
+export default async function BlogPostPage({ params }: PageProps) {
   const filePath = path.join(
     process.cwd(),
     "src/app/blog/posts",
     `${params.slug}.mdx`
   );
-  const rawContent = fs.readFileSync(filePath, "utf-8");
-  const { content, data } = matter(rawContent);
+  const fileContent = readFileSync(filePath, "utf8");
+
+  const { content, data } = matter(fileContent);
 
   const { content: compiled } = await compileMDX({
     source: content,
-    options: { parseFrontmatter: true },
+    options: {
+      parseFrontmatter: true,
+    },
   });
 
   return (
     <MdxLayout>
-      <h1>{data.title}</h1>
-      <p className="text-sm text-gray-500">{data.date}</p>
-      <article>{compiled}</article>
+      <article>
+        <h1>{data.title}</h1>
+        <p className="text-sm text-gray-500">{data.date}</p>
+        {compiled}
+      </article>
     </MdxLayout>
   );
 }
