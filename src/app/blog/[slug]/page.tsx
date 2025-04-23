@@ -5,7 +5,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import MdxLayout from "@/components/mdx-layout";
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>; // Ensure that `params` is a Promise
 }
 
 // Generate static params correctly (no need for async/await here)
@@ -19,9 +19,10 @@ export async function generateStaticParams() {
   return filenames.map((slug) => ({ slug }));
 }
 
-// Dynamic Blog Post Page (make sure it handles params correctly)
+// Dynamic Blog Post Page (await params before usage)
 export default async function BlogPostPage({ params }: PageProps) {
-  const slug = (await params).slug; // Await the params
+  // Await params because it's a Promise
+  const { slug } = await params;
 
   const filePath = path.join(
     process.cwd(),
