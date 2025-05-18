@@ -1,0 +1,21 @@
+---
+title: "Var vs Let: The Vibes of Scope"
+date: "2025-05-18"
+author: "Skaria Andrews"
+tags: ["javascript", "var", "let", "developer tips", "coding vibes"]
+---
+
+There’s a certain _mood_ to writing JavaScript. But if you’re still reaching for `var` in 2025, we need to talk. Because `let` isn’t just syntactic sugar — it’s a scope shift, a mindset, a vibe.
+
+It’s like going from floppy disks to SSDs. Both store stuff, but one just _feels_ right.
+
+## The Legacy of `var`
+
+`var` is old school. It’s got _hoisting_, it’s got _function scope_, and it sometimes leads to those WTF moments that haunt your console logs at 2 a.m.
+
+```js
+function example() {
+  console.log(x); // undefined 😵
+  var x = 10;
+}
+```
